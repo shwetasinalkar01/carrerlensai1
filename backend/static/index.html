@@ -1,0 +1,2490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>CareerLens AI | Resume Intelligence</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        body {
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Arial,
+                sans-serif;
+
+            background: #f5f7fb;
+
+            color: #172033;
+
+            min-height: 100vh;
+        }
+
+
+        /* ==============================
+           NAVBAR
+        ============================== */
+
+        nav {
+            height: 70px;
+
+            background: #ffffff;
+
+            border-bottom: 1px solid #e5e7eb;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 0 6%;
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 100;
+        }
+
+
+        .logo {
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            font-size: 21px;
+
+            font-weight: 800;
+
+            color: #111827;
+        }
+
+
+        .logo-icon {
+            width: 38px;
+
+            height: 38px;
+
+            border-radius: 10px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #4f46e5,
+                    #7c3aed
+                );
+
+            color: white;
+
+            font-size: 19px;
+        }
+
+
+        .nav-title {
+            color: #6b7280;
+
+            font-size: 14px;
+
+            font-weight: 500;
+        }
+
+
+        /* ==============================
+           MAIN
+        ============================== */
+
+        .container {
+            width: 92%;
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            padding: 45px 0;
+        }
+
+
+        /* ==============================
+           HERO
+        ============================== */
+
+        .hero {
+            text-align: center;
+
+            margin-bottom: 40px;
+        }
+
+
+        .hero-badge {
+            display: inline-block;
+
+            padding: 7px 14px;
+
+            border-radius: 50px;
+
+            background: #eef2ff;
+
+            color: #4f46e5;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            margin-bottom: 15px;
+        }
+
+
+        .hero h1 {
+            font-size: 44px;
+
+            line-height: 1.15;
+
+            margin-bottom: 12px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #4f46e5,
+                    #7c3aed
+                );
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+        }
+
+
+        .hero p {
+            color: #6b7280;
+
+            font-size: 17px;
+
+            max-width: 600px;
+
+            margin: auto;
+
+            line-height: 1.6;
+        }
+
+
+        /* ==============================
+           AUTH
+        ============================== */
+
+        .auth-wrapper {
+            display: flex;
+
+            justify-content: center;
+        }
+
+
+        .auth-card {
+            width: 100%;
+
+            max-width: 440px;
+
+            background: white;
+
+            padding: 35px;
+
+            border-radius: 20px;
+
+            border: 1px solid #e5e7eb;
+
+            box-shadow:
+                0 15px 40px
+                rgba(31, 41, 55, 0.08);
+        }
+
+
+        .auth-icon {
+            width: 55px;
+
+            height: 55px;
+
+            border-radius: 15px;
+
+            background: #eef2ff;
+
+            color: #4f46e5;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 25px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .auth-card h2 {
+            font-size: 25px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .auth-card > p {
+            color: #6b7280;
+
+            font-size: 14px;
+
+            margin-bottom: 25px;
+
+            line-height: 1.5;
+        }
+
+
+        label {
+            display: block;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            margin-bottom: 7px;
+
+            color: #374151;
+        }
+
+
+        input,
+        textarea {
+            width: 100%;
+
+            border: 1px solid #d1d5db;
+
+            border-radius: 10px;
+
+            padding: 13px 14px;
+
+            font-size: 14px;
+
+            outline: none;
+
+            transition: .2s;
+
+            background: #ffffff;
+
+            margin-bottom: 17px;
+        }
+
+
+        input:focus,
+        textarea:focus {
+            border-color: #6366f1;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(99,102,241,.1);
+        }
+
+
+        textarea {
+            min-height: 160px;
+
+            resize: vertical;
+        }
+
+
+        /* ==============================
+           BUTTONS
+        ============================== */
+
+        button {
+            border: none;
+
+            border-radius: 10px;
+
+            padding: 13px 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #4f46e5,
+                    #7c3aed
+                );
+
+            color: white;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition: .2s;
+
+            font-size: 14px;
+        }
+
+
+        button:hover {
+            transform: translateY(-1px);
+
+            box-shadow:
+                0 7px 18px
+                rgba(79,70,229,.25);
+        }
+
+
+        button:disabled {
+            opacity: .6;
+
+            cursor: not-allowed;
+
+            transform: none;
+
+            box-shadow: none;
+        }
+
+
+        .link-button {
+            background: transparent;
+
+            color: #4f46e5;
+
+            padding: 5px;
+
+            box-shadow: none;
+
+            margin-top: 4px;
+        }
+
+
+        .link-button:hover {
+            background: transparent;
+
+            box-shadow: none;
+
+            text-decoration: underline;
+
+            transform: none;
+        }
+
+
+        /* ==============================
+           STATUS
+        ============================== */
+
+        .status {
+            padding: 12px 14px;
+
+            background: #f8fafc;
+
+            border: 1px solid #e5e7eb;
+
+            border-radius: 10px;
+
+            margin-top: 15px;
+
+            color: #64748b;
+
+            font-size: 13px;
+
+            line-height: 1.5;
+        }
+
+
+        /* ==============================
+           DASHBOARD
+        ============================== */
+
+        .dashboard {
+            display: none;
+        }
+
+
+        .dashboard-header {
+            background:
+                linear-gradient(
+                    135deg,
+                    #111827,
+                    #312e81
+                );
+
+            color: white;
+
+            border-radius: 20px;
+
+            padding: 30px;
+
+            margin-bottom: 25px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+
+        .dashboard-header h2 {
+            font-size: 25px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .dashboard-header p {
+            color: #d1d5db;
+
+            font-size: 14px;
+        }
+
+
+        .logout-btn {
+            background: white;
+
+            color: #374151;
+
+            flex-shrink: 0;
+        }
+
+
+        .logout-btn:hover {
+            background: #f3f4f6;
+        }
+
+
+        /* ==============================
+           GRID
+        ============================== */
+
+        .grid {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 25px;
+
+            margin-bottom: 25px;
+        }
+
+
+        .card {
+            background: white;
+
+            padding: 26px;
+
+            border-radius: 18px;
+
+            border: 1px solid #e5e7eb;
+
+            box-shadow:
+                0 8px 25px
+                rgba(15,23,42,.04);
+        }
+
+
+        .card-header {
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .card-icon {
+            width: 42px;
+
+            height: 42px;
+
+            border-radius: 11px;
+
+            background: #eef2ff;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 20px;
+        }
+
+
+        .card h3 {
+            font-size: 18px;
+        }
+
+
+        .card-subtitle {
+            color: #6b7280;
+
+            font-size: 13px;
+
+            margin-top: 3px;
+        }
+
+
+        /* ==============================
+           FILE UPLOAD
+        ============================== */
+
+        .upload-box {
+            border: 2px dashed #c7d2fe;
+
+            background: #f8faff;
+
+            padding: 25px;
+
+            border-radius: 14px;
+
+            text-align: center;
+
+            margin-bottom: 17px;
+        }
+
+
+        .upload-box-icon {
+            font-size: 35px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .upload-box p {
+            color: #6b7280;
+
+            font-size: 13px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .upload-box input {
+            border: none;
+
+            padding: 0;
+
+            margin: 0;
+
+            background: transparent;
+        }
+
+
+        /* ==============================
+           ANALYSIS
+        ============================== */
+
+        .analysis-card {
+            margin-top: 25px;
+        }
+
+
+        .analysis-header {
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .analysis-header-icon {
+            width: 45px;
+
+            height: 45px;
+
+            border-radius: 12px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #eef2ff,
+                    #f3e8ff
+                );
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 22px;
+        }
+
+
+        .analysis-description {
+            color: #6b7280;
+
+            font-size: 14px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .analyze-btn {
+            margin-bottom: 20px;
+        }
+
+
+        /* ==============================
+           RESULT
+        ============================== */
+
+        .result {
+            border-top: 1px solid #e5e7eb;
+
+            padding-top: 25px;
+
+            margin-top: 5px;
+        }
+
+
+        .score-wrapper {
+            text-align: center;
+
+            margin-bottom: 30px;
+        }
+
+
+        .score-circle {
+            width: 150px;
+
+            height: 150px;
+
+            border-radius: 50%;
+
+            margin: auto;
+
+            background:
+                conic-gradient(
+                    #4f46e5 0deg,
+                    #7c3aed 270deg,
+                    #e5e7eb 270deg
+                );
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            position: relative;
+        }
+
+
+        .score-circle::before {
+            content: "";
+
+            width: 120px;
+
+            height: 120px;
+
+            background: white;
+
+            border-radius: 50%;
+
+            position: absolute;
+        }
+
+
+        .score-number {
+            position: relative;
+
+            font-size: 30px;
+
+            font-weight: 800;
+
+            color: #312e81;
+        }
+
+
+        .score-label {
+            margin-top: 10px;
+
+            color: #6b7280;
+
+            font-size: 13px;
+        }
+
+
+        .result-grid {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 18px;
+        }
+
+
+        .result-box {
+            background: #f8fafc;
+
+            border: 1px solid #e5e7eb;
+
+            padding: 20px;
+
+            border-radius: 14px;
+        }
+
+
+        .result-box h4 {
+            font-size: 14px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .result-box p {
+            color: #64748b;
+
+            font-size: 13px;
+
+            line-height: 1.7;
+        }
+
+
+        .recommendation-box {
+            grid-column: 1 / -1;
+
+            background: #eef2ff;
+
+            border-color: #c7d2fe;
+        }
+
+
+        /* ==============================
+           HIDDEN REGISTER
+        ============================== */
+
+        .register-section {
+            display: none;
+        }
+
+
+        /* ==============================
+           FOOTER
+        ============================== */
+
+        footer {
+            text-align: center;
+
+            color: #9ca3af;
+
+            font-size: 12px;
+
+            padding: 30px 0;
+        }
+
+
+        /* ==============================
+           RESPONSIVE
+        ============================== */
+
+        @media(max-width: 800px) {
+
+            .grid,
+            .result-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .recommendation-box {
+                grid-column: auto;
+            }
+
+
+            .dashboard-header {
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+        }
+
+
+        @media(max-width: 500px) {
+
+            .container {
+                width: 94%;
+
+                padding-top: 30px;
+            }
+
+
+            nav {
+                padding: 0 4%;
+            }
+
+
+            .nav-title {
+                display: none;
+            }
+
+
+            .auth-card,
+            .card {
+                padding: 20px;
+            }
+
+
+            .hero h1 {
+                font-size: 31px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+====================================================== -->
+
+<nav>
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            ✦
+        </div>
+
+        CareerLens AI
+
+    </div>
+
+
+    <div class="nav-title">
+        Resume Intelligence Platform
+    </div>
+
+</nav>
+
+
+
+<div class="container">
+
+
+    <!-- =================================================
+         HERO
+    ================================================== -->
+
+    <div class="hero">
+
+        <div class="hero-badge">
+            ✨ AI-Powered Career Intelligence
+        </div>
+
+        <h1>
+            Understand Your Resume.
+            <br>
+            Match Your Dream Job.
+        </h1>
+
+        <p>
+            Analyze your resume with AI, discover missing skills,
+            and get personalized recommendations for your career.
+        </p>
+
+    </div>
+
+
+
+    <!-- =================================================
+         LOGIN
+    ================================================== -->
+
+    <div
+        id="loginSection"
+        class="auth-wrapper"
+    >
+
+        <div class="auth-card">
+
+            <div class="auth-icon">
+                🔐
+            </div>
+
+            <h2>
+                Welcome Back
+            </h2>
+
+            <p>
+                Login to continue to your CareerLens dashboard.
+            </p>
+
+
+            <label>
+                Email
+            </label>
+
+            <input
+                id="loginEmail"
+                type="email"
+                placeholder="you@example.com"
+            >
+
+
+            <label>
+                Password
+            </label>
+
+            <input
+                id="loginPassword"
+                type="password"
+                placeholder="Enter your password"
+            >
+
+
+            <button
+                id="loginButton"
+                onclick="login()"
+                style="width:100%;"
+            >
+                Login
+            </button>
+
+
+            <div
+                id="loginStatus"
+                class="status"
+            >
+                Enter your login details.
+            </div>
+
+
+            <p style="margin-top:20px;margin-bottom:5px;">
+                Don't have an account?
+            </p>
+
+
+            <button
+                class="link-button"
+                onclick="showRegister()"
+            >
+                Create a new account →
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         REGISTER
+    ================================================== -->
+
+    <div
+        id="registerSection"
+        class="auth-wrapper register-section"
+    >
+
+        <div class="auth-card">
+
+            <div class="auth-icon">
+                👤
+            </div>
+
+            <h2>
+                Create Account
+            </h2>
+
+            <p>
+                Join CareerLens AI and start analyzing your career.
+            </p>
+
+
+            <label>
+                Full Name
+            </label>
+
+            <input
+                id="registerName"
+                type="text"
+                placeholder="Your full name"
+            >
+
+
+            <label>
+                Email
+            </label>
+
+            <input
+                id="registerEmail"
+                type="email"
+                placeholder="you@example.com"
+            >
+
+
+            <label>
+                Password
+            </label>
+
+            <input
+                id="registerPassword"
+                type="password"
+                placeholder="Create a password"
+            >
+
+
+            <button
+                id="registerButton"
+                onclick="registerUser()"
+                style="width:100%;"
+            >
+                Create Account
+            </button>
+
+
+            <div
+                id="registerStatus"
+                class="status"
+            >
+                Enter your details to create an account.
+            </div>
+
+
+            <p style="margin-top:20px;margin-bottom:5px;">
+                Already have an account?
+            </p>
+
+
+            <button
+                class="link-button"
+                onclick="showLogin()"
+            >
+                ← Back to Login
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         DASHBOARD
+    ================================================== -->
+
+    <div
+        id="dashboard"
+        class="dashboard"
+    >
+
+
+        <!-- HEADER -->
+
+        <div class="dashboard-header">
+
+            <div>
+
+                <h2>
+                    Career Dashboard
+                </h2>
+
+                <p id="welcomeUser">
+                    Welcome! Let's analyze your career profile.
+                </p>
+
+            </div>
+
+
+            <button
+                class="logout-btn"
+                onclick="logout()"
+            >
+                Logout
+            </button>
+
+        </div>
+
+
+
+        <!-- RESUME + JOB -->
+
+        <div class="grid">
+
+
+            <!-- RESUME -->
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div class="card-icon">
+                        📄
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Resume
+                        </h3>
+
+                        <div class="card-subtitle">
+                            Upload your latest resume
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="upload-box">
+
+                    <div class="upload-box-icon">
+                        📄
+                    </div>
+
+                    <p>
+                        Upload your resume in PDF format
+                    </p>
+
+
+                    <input
+                        id="resumeFile"
+                        type="file"
+                        accept=".pdf,application/pdf"
+                    >
+
+                </div>
+
+
+                <button
+                    onclick="uploadResume()"
+                >
+                    Upload Resume
+                </button>
+
+
+                <div
+                    id="resumeStatus"
+                    class="status"
+                >
+                    No resume uploaded yet.
+                </div>
+
+            </div>
+
+
+
+            <!-- JOB -->
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div class="card-icon">
+                        💼
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Target Job
+                        </h3>
+
+                        <div class="card-subtitle">
+                            Add the job you want to match
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <label>
+                    Job Title
+                </label>
+
+                <input
+                    id="jobTitle"
+                    placeholder="e.g. Python Developer"
+                >
+
+
+                <label>
+                    Company
+                </label>
+
+                <input
+                    id="company"
+                    placeholder="e.g. Google"
+                >
+
+
+                <label>
+                    Job Description
+                </label>
+
+                <textarea
+                    id="jobDescription"
+                    placeholder="Paste the complete job description here..."
+                ></textarea>
+
+
+                <button
+                    onclick="createJob()"
+                >
+                    Save Job
+                </button>
+
+
+                <div
+                    id="jobStatus"
+                    class="status"
+                >
+                    No job selected yet.
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             AI ANALYSIS
+        ================================================== -->
+
+        <div class="card analysis-card">
+
+            <div class="analysis-header">
+
+                <div class="analysis-header-icon">
+                    🤖
+                </div>
+
+                <div>
+
+                    <h3>
+                        AI Resume Analysis
+                    </h3>
+
+                    <div class="card-subtitle">
+                        Powered by Gemini AI
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <p class="analysis-description">
+
+                Compare your resume against the target job
+                and discover your strengths, skill gaps and
+                personalized career recommendations.
+
+            </p>
+
+
+            <button
+                class="analyze-btn"
+                onclick="analyze()"
+            >
+                ✨ Analyze My Match
+            </button>
+
+
+            <div
+                id="analysisResult"
+            ></div>
+
+        </div>
+
+
+    </div>
+
+
+    <footer>
+
+        CareerLens AI • Resume Intelligence Platform
+
+    </footer>
+
+
+</div>
+
+
+
+<script>
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+
+let token = null;
+
+let resumeId = null;
+
+let jobId = null;
+
+
+
+/* =====================================================
+   SHOW LOGIN
+===================================================== */
+
+function showLogin() {
+
+    document
+        .getElementById("loginSection")
+        .style.display = "flex";
+
+
+    document
+        .getElementById("registerSection")
+        .style.display = "none";
+
+}
+
+
+
+/* =====================================================
+   SHOW REGISTER
+===================================================== */
+
+function showRegister() {
+
+    document
+        .getElementById("loginSection")
+        .style.display = "none";
+
+
+    document
+        .getElementById("registerSection")
+        .style.display = "flex";
+
+}
+
+
+
+/* =====================================================
+   REGISTER
+===================================================== */
+
+async function registerUser() {
+
+
+    const name =
+        document
+        .getElementById("registerName")
+        .value
+        .trim();
+
+
+    const email =
+        document
+        .getElementById("registerEmail")
+        .value
+        .trim();
+
+
+    const password =
+        document
+        .getElementById("registerPassword")
+        .value;
+
+
+    const status =
+        document
+        .getElementById("registerStatus");
+
+
+    const button =
+        document
+        .getElementById("registerButton");
+
+
+
+    if (!name || !email || !password) {
+
+        status.innerText =
+            "Please fill all fields.";
+
+        return;
+
+    }
+
+
+
+    if (password.length < 6) {
+
+        status.innerText =
+            "Password must contain at least 6 characters.";
+
+        return;
+
+    }
+
+
+
+    button.disabled = true;
+
+    button.innerText =
+        "Creating Account...";
+
+
+    status.innerText =
+        "Creating your account...";
+
+
+
+    try {
+
+
+        const response =
+            await fetch(
+                "/auth/register",
+                {
+
+                    method: "POST",
+
+                    headers: {
+
+                        "Content-Type":
+                            "application/json",
+
+                        "Accept":
+                            "application/json"
+
+                    },
+
+                    body:
+                        JSON.stringify({
+
+                            name: name,
+
+                            email: email,
+
+                            password: password
+
+                        })
+
+                }
+            );
+
+
+
+        const data =
+            await response.json();
+
+
+
+        console.log(
+            "REGISTER RESPONSE:",
+            data
+        );
+
+
+
+        if (!response.ok) {
+
+            status.innerText =
+                data.detail ||
+                "Registration failed.";
+
+            button.disabled = false;
+
+            button.innerText =
+                "Create Account";
+
+            return;
+
+        }
+
+
+
+        status.innerText =
+            "Account created successfully! Please login.";
+
+
+        document
+            .getElementById("loginEmail")
+            .value = email;
+
+
+        document
+            .getElementById("loginPassword")
+            .value = password;
+
+
+
+        setTimeout(
+            function () {
+
+                showLogin();
+
+                document
+                    .getElementById("loginStatus")
+                    .innerText =
+                    "Account created successfully. You can now login.";
+
+            },
+            800
+        );
+
+
+    }
+
+
+    catch (error) {
+
+        console.error(
+            "REGISTER ERROR:",
+            error
+        );
+
+
+        status.innerText =
+            "Could not connect to backend.";
+
+    }
+
+
+
+    button.disabled = false;
+
+    button.innerText =
+        "Create Account";
+
+}
+
+
+
+/* =====================================================
+   LOGIN
+===================================================== */
+
+async function login() {
+
+
+    const email =
+        document
+        .getElementById("loginEmail")
+        .value
+        .trim();
+
+
+    const password =
+        document
+        .getElementById("loginPassword")
+        .value;
+
+
+    const status =
+        document
+        .getElementById("loginStatus");
+
+
+    const button =
+        document
+        .getElementById("loginButton");
+
+
+
+    if (!email || !password) {
+
+        status.innerText =
+            "Please enter email and password.";
+
+        return;
+
+    }
+
+
+
+    button.disabled = true;
+
+    button.innerText =
+        "Logging in...";
+
+
+    status.innerText =
+        "Connecting to CareerLens backend...";
+
+
+
+    try {
+
+
+        const response =
+            await fetch(
+                "/auth/login",
+                {
+
+                    method: "POST",
+
+                    headers: {
+
+                        "Content-Type":
+                            "application/json",
+
+                        "Accept":
+                            "application/json"
+
+                    },
+
+                    body:
+                        JSON.stringify({
+
+                            email: email,
+
+                            password: password
+
+                        })
+
+                }
+            );
+
+
+
+        const data =
+            await response.json();
+
+
+
+        console.log(
+            "LOGIN RESPONSE:",
+            data
+        );
+
+
+
+        if (!response.ok) {
+
+            status.innerText =
+                "Login failed: " +
+                (
+                    data.detail ||
+                    "Invalid email or password."
+                );
+
+
+            button.disabled = false;
+
+            button.innerText =
+                "Login";
+
+            return;
+
+        }
+
+
+
+        token =
+            data.access_token;
+
+
+        localStorage.setItem(
+            "career_token",
+            token
+        );
+
+
+
+        document
+            .getElementById("loginSection")
+            .style.display = "none";
+
+
+        document
+            .getElementById("registerSection")
+            .style.display = "none";
+
+
+        document
+            .getElementById("dashboard")
+            .style.display = "block";
+
+
+
+        getCurrentUser();
+
+    }
+
+
+    catch (error) {
+
+        console.error(
+            "LOGIN ERROR:",
+            error
+        );
+
+
+        status.innerText =
+            "Cannot connect to CareerLens backend.";
+
+    }
+
+
+
+    button.disabled = false;
+
+    button.innerText =
+        "Login";
+
+}
+
+
+
+/* =====================================================
+   GET CURRENT USER
+===================================================== */
+
+async function getCurrentUser() {
+
+
+    try {
+
+
+        const response =
+            await fetch(
+                "/auth/me",
+                {
+
+                    method: "GET",
+
+                    headers: {
+
+                        "Authorization":
+                            "Bearer " + token
+
+                    }
+
+                }
+            );
+
+
+
+        const data =
+            await response.json();
+
+
+
+        if (response.ok) {
+
+            document
+                .getElementById("welcomeUser")
+                .innerText =
+                "Welcome, " +
+                data.name +
+                "! Let's analyze your career profile.";
+
+        }
+
+    }
+
+
+    catch (error) {
+
+        console.error(
+            "USER ERROR:",
+            error
+        );
+
+    }
+
+}
+
+
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+function logout() {
+
+
+    localStorage.removeItem(
+        "career_token"
+    );
+
+
+    token = null;
+
+    resumeId = null;
+
+    jobId = null;
+
+
+
+    document
+        .getElementById("dashboard")
+        .style.display = "none";
+
+
+    document
+        .getElementById("loginSection")
+        .style.display = "flex";
+
+
+    document
+        .getElementById("registerSection")
+        .style.display = "none";
+
+
+
+    document
+        .getElementById("loginStatus")
+        .innerText =
+        "Please login to continue.";
+
+
+    document
+        .getElementById("resumeStatus")
+        .innerText =
+        "No resume uploaded yet.";
+
+
+    document
+        .getElementById("jobStatus")
+        .innerText =
+        "No job selected yet.";
+
+
+    document
+        .getElementById("analysisResult")
+        .innerHTML = "";
+
+}
+
+
+
+/* =====================================================
+   RESUME UPLOAD
+===================================================== */
+
+async function uploadResume() {
+
+
+    const file =
+        document
+        .getElementById("resumeFile")
+        .files[0];
+
+
+    const status =
+        document
+        .getElementById("resumeStatus");
+
+
+
+    if (!token) {
+
+        status.innerText =
+            "Please login first.";
+
+        return;
+
+    }
+
+
+
+    if (!file) {
+
+        status.innerText =
+            "Please select a PDF resume.";
+
+        return;
+
+    }
+
+
+
+    if (file.type !== "application/pdf") {
+
+        status.innerText =
+            "Only PDF files are allowed.";
+
+        return;
+
+    }
+
+
+
+    status.innerText =
+        "Uploading resume...";
+
+
+    const formData =
+        new FormData();
+
+
+    formData.append(
+        "file",
+        file
+    );
+
+
+
+    try {
+
+
+        const response =
+            await fetch(
+                "/resumes/upload",
+                {
+
+                    method: "POST",
+
+                    headers: {
+
+                        "Authorization":
+                            "Bearer " + token
+
+                    },
+
+                    body: formData
+
+                }
+            );
+
+
+
+        const data =
+            await response.json();
+
+
+
+        console.log(
+            "RESUME RESPONSE:",
+            data
+        );
+
+
+
+        if (!response.ok) {
+
+            status.innerText =
+                data.detail ||
+                "Resume upload failed.";
+
+            return;
+
+        }
+
+
+
+        resumeId =
+            data.resume_id;
+
+
+        status.innerText =
+            "✓ Resume uploaded successfully. ID: " +
+            resumeId;
+
+    }
+
+
+    catch (error) {
+
+        console.error(
+            "RESUME ERROR:",
+            error
+        );
+
+
+        status.innerText =
+            "Could not connect to backend.";
+
+    }
+
+}
+
+
+
+/* =====================================================
+   CREATE JOB
+===================================================== */
+
+async function createJob() {
+
+
+    const title =
+        document
+        .getElementById("jobTitle")
+        .value
+        .trim();
+
+
+    const company =
+        document
+        .getElementById("company")
+        .value
+        .trim();
+
+
+    const description =
+        document
+        .getElementById("jobDescription")
+        .value
+        .trim();
+
+
+    const status =
+        document
+        .getElementById("jobStatus");
+
+
+
+    if (!token) {
+
+        status.innerText =
+            "Please login first.";
+
+        return;
+
+    }
+
+
+
+    if (!title || !description) {
+
+        status.innerText =
+            "Job title and description are required.";
+
+        return;
+
+    }
+
+
+
+    status.innerText =
+        "Saving job...";
+
+
+
+    try {
+
+
+        const response =
+            await fetch(
+                "/jobs/",
+                {
+
+                    method: "POST",
+
+                    headers: {
+
+                        "Content-Type":
+                            "application/json",
+
+                        "Authorization":
+                            "Bearer " + token
+
+                    },
+
+                    body:
+                        JSON.stringify({
+
+                            title:
+                                title,
+
+                            company:
+                                company,
+
+                            description:
+                                description
+
+                        })
+
+                }
+            );
+
+
+
+        const data =
+            await response.json();
+
+
+
+        console.log(
+            "JOB RESPONSE:",
+            data
+        );
+
+
+
+        if (!response.ok) {
+
+            status.innerText =
+                data.detail ||
+                "Could not save job.";
+
+            return;
+
+        }
+
+
+
+        jobId =
+            data.job.id;
+
+
+        status.innerText =
+            "✓ Job saved successfully. ID: " +
+            jobId;
+
+    }
+
+
+    catch (error) {
+
+        console.error(
+            "JOB ERROR:",
+            error
+        );
+
+
+        status.innerText =
+            "Could not connect to backend.";
+
+    }
+
+}
+
+
+
+/* =====================================================
+   AI ANALYSIS
+===================================================== */
+
+async function analyze() {
+
+
+    const result =
+        document
+        .getElementById("analysisResult");
+
+
+
+    if (!token) {
+
+        result.innerHTML =
+            "<div class='status'>" +
+            "Please login first." +
+            "</div>";
+
+        return;
+
+    }
+
+
+
+    if (!resumeId) {
+
+        result.innerHTML =
+            "<div class='status'>" +
+            "📄 Please upload your resume first." +
+            "</div>";
+
+        return;
+
+    }
+
+
+
+    if (!jobId) {
+
+        result.innerHTML =
+            "<div class='status'>" +
+            "💼 Please save a job first." +
+            "</div>";
+
+        return;
+
+    }
+
+
+
+    result.innerHTML =
+        "<div class='status'>" +
+        "🤖 Gemini AI is analyzing your resume... Please wait." +
+        "</div>";
+
+
+
+    try {
+
+
+        const response =
+            await fetch(
+                "/analysis/",
+                {
+
+                    method: "POST",
+
+                    headers: {
+
+                        "Content-Type":
+                            "application/json",
+
+                        "Authorization":
+                            "Bearer " + token
+
+                    },
+
+                    body:
+                        JSON.stringify({
+
+                            resume_id:
+                                resumeId,
+
+                            job_id:
+                                jobId
+
+                        })
+
+                }
+            );
+
+
+
+        const data =
+            await response.json();
+
+
+
+        console.log(
+            "ANALYSIS RESPONSE:",
+            data
+        );
+
+
+
+        if (!response.ok) {
+
+            result.innerHTML =
+                "<div class='status'>" +
+                "Analysis failed: " +
+                (
+                    data.detail ||
+                    "AI analysis failed."
+                ) +
+                "</div>";
+
+            return;
+
+        }
+
+
+
+        /*
+            Convert score to degrees
+            for score circle.
+        */
+
+        const score =
+            Number(data.match_score) || 0;
+
+
+        const degrees =
+            score * 3.6;
+
+
+
+        const matched =
+            data.matched_skills ||
+            "None";
+
+
+        const missing =
+            data.missing_skills ||
+            "None";
+
+
+        const recommendations =
+            data.recommendations ||
+            "None";
+
+
+
+        result.innerHTML = `
+
+            <div class="result">
+
+                <div class="score-wrapper">
+
+                    <div
+                        class="score-circle"
+                        style="
+                            background:
+                            conic-gradient(
+                                #4f46e5 0deg,
+                                #7c3aed ${degrees}deg,
+                                #e5e7eb ${degrees}deg
+                            );
+                        "
+                    >
+
+                        <div class="score-number">
+                            ${score}%
+                        </div>
+
+                    </div>
+
+
+                    <div class="score-label">
+                        Resume Match Score
+                    </div>
+
+                </div>
+
+
+                <div class="result-grid">
+
+
+                    <div class="result-box">
+
+                        <h4>
+                            ✅ Matched Skills
+                        </h4>
+
+                        <p>
+                            ${matched}
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="result-box">
+
+                        <h4>
+                            ⚠️ Missing Skills
+                        </h4>
+
+                        <p>
+                            ${missing}
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="result-box recommendation-box">
+
+                        <h4>
+                            💡 Recommendations
+                        </h4>
+
+                        <p>
+                            ${recommendations}
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        `;
+
+    }
+
+
+    catch (error) {
+
+        console.error(
+            "ANALYSIS ERROR:",
+            error
+        );
+
+
+        result.innerHTML =
+            "<div class='status'>" +
+            "Could not connect to backend." +
+            "</div>";
+
+    }
+
+}
+
+
+
+/* =====================================================
+   ALWAYS START WITH LOGIN
+===================================================== */
+
+window.onload = function() {
+
+
+    localStorage.removeItem(
+        "career_token"
+    );
+
+
+    token = null;
+
+    resumeId = null;
+
+    jobId = null;
+
+
+    document
+        .getElementById("loginSection")
+        .style.display = "flex";
+
+
+    document
+        .getElementById("registerSection")
+        .style.display = "none";
+
+
+    document
+        .getElementById("dashboard")
+        .style.display = "none";
+
+};
+
+</script>
+
+
+</body>
+
+</html>
